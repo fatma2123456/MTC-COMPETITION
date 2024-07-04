@@ -1,8 +1,21 @@
-Dataset library ------>> !pip install datasets
-Noisereduce library ------->> !pip install noisereduce
-Tensorflow library ---------->> !pip install tensorflow
+os
+random
+math
+ipython
+pandas
+numpy
+tensorflow
+matplotlib
 Jiwer library --------->> !pip install jiwer
 Librose library ---------->> !pip install librosa
+torch
+Tensorflow library ---------->> !pip install tensorflow
+dataclasses
+Dataset library ------>> !pip install datasets
+torchaudio
+Noisereduce library ------->> !pip install noisereduce
+tqdm
+
 
 This Croups from transcript
 https://www.kaggle.com/datasets/fatmaalzhraahmed/croups-2
