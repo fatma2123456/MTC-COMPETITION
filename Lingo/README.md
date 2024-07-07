@@ -27,7 +27,7 @@ This project implements an end-to-end speech recognition system for Arabic, spec
   - Bidirectional LSTM (128 units)
   - TimeDistributed Dense layer
   - Softmax activation
-
+ 
 ### Language Model
 - Input: Character sequences
 - Architecture:
@@ -43,6 +43,16 @@ This project implements an end-to-end speech recognition system for Arabic, spec
 - MFCC feature extraction (13 coefficients) using Librosa
 - Padding/truncation of audio features to fixed length
 - Character-level tokenization for transcripts
+- Max sequence length for audio features: Defined by max_len
+- Max transcript length: Defined by max_transcript_len
+- Character to index mapping for text processing
+
+### Training Details
+
+- Batch Size: 16
+- Epochs: 8
+- Learning Rate Reduction: Factor of 0.5, patience of 5 epochs for Acoustic Model, 1 epoch for Language Model
+
 
 ## Training Process
 
@@ -53,6 +63,12 @@ This project implements an end-to-end speech recognition system for Arabic, spec
    in order to understand how the loss function is ultimately calculated.
    <img src="https://distill.pub/2017/ctc/assets/ctc_cost.svg" alt="Some Content">
 - Early stopping and learning rate reduction strategies
+
+
+## Model Saving and Loading
+
+- Models saved and loaded in H5 format
+- Custom objects (like CTC loss) handled during loading
 
 ## Inference
 
