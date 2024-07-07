@@ -82,21 +82,28 @@ This project implements an end-to-end speech recognition system for Arabic, spec
  the transcption and putting them in words.txt for the text. We also worked on identifying letters in the Arabic language and improving 
  the outputs of the model and training it.
  <h6>Training segmentation:</h6>
+ 
   1-Due to the limitations of the GPU, I had to divide the training process into multiple phases. This is demonstrated by saving and 
     reloading models between training sessions (eg acoustic_model_train_1.h5 and acoustic_model_train_2.h5).
+    
   2-Long training time:
     Epoch 1 appears to take over 3 hours to complete. This indicates that the GPU is relatively weak, making the training process very 
     slow.
+    
   3-Need to save progress frequently:
      Due to the long training time, it was necessary to save the model frequently to avoid losing progress in case of any interruption 
      or problem.
+     
   4-Repeat loading and saving operations:
       I had to download and recompile the models at the beginning of each training session, and then save them again at the end of the 
       session. This adds additional complexity to the process and increases the possibility of errors.
+      
   5-Increased likelihood of errors:
     With each form save and load, the chances of errors such as version incompatibilities or file format issues increase.
+    
   6-Resource consumption:
     Repeating saving and loading operations consumes additional resources in terms of storage space and processing time.
+    
 
 These challenges make the training process more complex and time-consuming than if you could perform training continuously on a more powerful GPU. However, this approach enables you to complete training despite limitations on available resources.
 
